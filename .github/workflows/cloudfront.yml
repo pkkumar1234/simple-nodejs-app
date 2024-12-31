@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - master  # Trigger on push to the 'main' branch
+permissions:
+  id-token: write  # This grants the action the permission to obtain an OIDC token
+  contents: read   # This is typical for repository content access
 
 jobs:
   deploy:
