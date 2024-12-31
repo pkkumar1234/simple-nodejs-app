@@ -3,7 +3,7 @@ name: Deploy Node.js app to S3 and CloudFront
 on:
   push:
     branches:
-      - master  # Trigger on push to the 'main' branch
+      - master  # Trigger on push to the 'master' branch
 permissions:
   id-token: write  # This grants the action the permission to obtain an OIDC token
   contents: read   # This is typical for repository content access
@@ -35,8 +35,8 @@ jobs:
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v3
       with:
-          role-to-assume: arn:aws:iam::222634381246:role/github-role
-          aws-region: ap-south-1
+        role-to-assume: arn:aws:iam::222634381246:role/github-role
+        aws-region: ap-south-1
 
     # Step 6: Sync build files to S3
     - name: Sync build to S3
